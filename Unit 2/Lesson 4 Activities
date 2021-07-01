@@ -1,0 +1,35 @@
+/* Lesson 4 Coding Activity Question 1 */
+
+import java.util.Scanner;
+public class U2_L4_Activity_One {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System. in );
+    System.out.println("Enter first string");
+    String s1 = scan.nextLine();
+    System.out.println("Enter second string");
+    String s2 = scan.nextLine();
+    System.out.println("Enter number of letters from each word");
+    int n = scan.nextInt();
+    System.out.println(s1.substring(0, n) + s2.substring(s2.length() - n, s2.length()));
+  }
+}
+
+
+/* Lesson 4 Coding Activity Question 2 */
+
+import java.util.Scanner;
+
+public class U2_L4_Activity_Two{
+  public static void main(String[] args){
+  
+    Scanner scan = new Scanner(System.in);
+    
+    String str1 = scan.nextLine();
+    String str2 = new String(str1);
+    System.out.println(str1.toUpperCase());
+    System.out.println(str2);
+  
+  }
+}
+
+
