@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+class Assignment1 {
+  public static void main(String[] args) {
+    
+    Scanner scan = new Scanner(System.in);
+    String movieName;
+    int movieLength;
+    int webReview1;
+    int webReview2;
+    int webReview3;
+    double groupReview1;
+    double groupReview2;
+    double criticRating;
+    
+    // System.out.println();
+    System.out.println("Please enter the movie name");
+    movieName = scan.nextLine();
+    System.out.println();
+    System.out.println("Please enter the running time in minutes.");
+    movieLength = scan.nextInt();
+    System.out.println();
+    System.out.println("Please enter ratings from the movie review website.");
+    webReview1 = scan.nextInt();
+    webReview2 = scan.nextInt();
+    webReview3 = scan.nextInt();
+    System.out.println();
+    System.out.println("Please enter ratings from the focus group.");
+    groupReview1 = scan.nextDouble();
+    groupReview2 = scan.nextDouble();
+    System.out.println();
+    System.out.println("Please enter the average movie critic rating.");
+    criticRating = scan.nextDouble();
+    System.out.println();
+    System.out.println();
+    
+    // Averages:
+    double avgWeb = (1.0*(webReview1 + webReview2 + webReview3)/3);
+    double avgGroup = (1.0 * (groupReview1 + groupReview2)/2);
+    int roundedFinal = (int)((0.2 * avgWeb) + (0.3 * avgGroup) + (0.5 * criticRating) + 0.5);
+    
+    
+    
+    System.out.println("Title: " + movieName);
+    System.out.println("Running time: " + (movieLength/60) + "h" + (movieLength%60));
+    System.out.println("Average website rating: " + avgWeb);
+    System.out.println("Average focus group rating: " + avgGroup);
+    System.out.println("Average movie critic rating: " + criticRating);
+    System.out.println("Overall movie rating: " + roundedFinal);
+    
+  }
+}
+
