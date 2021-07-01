@@ -1,0 +1,41 @@
+ACTIVITY 1:
+----------
+import java.util.Scanner;
+
+class U1_L5_Activity_One {
+    public static void main(String[] args) {
+      Scanner input = new Scanner (System.in);
+      int digit;
+      System.out.println("Please enter a two digit number:");
+      digit = input.nextInt();
+      int power = 1;
+      while (power <= digit) {
+        power *= 10;
+      }
+      power /= 10;
+      System.out.println("Here are the digits:");
+      while (power > 0) {
+        System.out.println(digit/power);
+        digit %= power;
+        power /= 10;
+        
+      }
+    }
+}
+
+
+ACTIVITY 2:
+----------
+import java.util.Scanner;
+
+class U1_L5_Activity_One {
+    public static void main(String[] args) {
+      Scanner radius = new Scanner (System.in);
+      System.out.println("Please enter a three digit number:");
+      int r = radius.nextInt();
+      System.out.println("Here are the digits:");
+      System.out.println((r / 1) % 10);
+      System.out.println((r / 10) % 10);
+      System.out.println((r / 100) % 10);
+    }
+}
