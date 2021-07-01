@@ -1,0 +1,62 @@
+/* Lesson 3 Coding Activity Question 1 */
+
+import java.util.Scanner;
+public class U2_L3_Activity_One {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System. in );
+    System.out.println("Enter a string:");
+    String conc = scan.nextLine();
+    System.out.println(conc.substring(0, 1) + conc.substring(conc.length() - 1, conc.length()));
+  }
+}
+
+
+/* Lesson 3 Coding Activity Question 2 */
+
+import java.util.Scanner;
+
+public class U2_L3_Activity_Two{
+  public static void main(String[] args){
+    Scanner sc= new Scanner(System.in);
+    System.out.println("Enter a string:");  
+    String str= sc.nextLine();
+    System.out.println(str.substring(1, str.length()-1));
+  }
+}
+
+
+/* Lesson 3 Coding Activity Question 3 */
+
+import java.util.Scanner;
+
+public class U2_L3_Activity_Three{
+  public static void main(String[] args){
+  
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter first word:");  
+    String str1 = sc.nextLine();
+    System.out.println("Enter second word:");  
+    String str2 = sc.nextLine();
+    str1 = str1.toLowerCase();
+    str2 = str2.toLowerCase();
+    int var1 = str1.compareTo( str2 );
+    System.out.println("Result: " + var1);
+  }
+}
+
+
+/* Lesson 3 Coding Activity Question 4 */
+
+import java.util.Scanner;
+
+public class U2_L3_Activity_Four{
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter a sentence:");  
+    String str1 = sc.nextLine();
+    String arr[] = str1.split(" ", 2);
+    String firstWord = arr[0]; 
+    System.out.println(firstWord.length());
+  }
+}
+
