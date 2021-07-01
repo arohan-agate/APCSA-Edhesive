@@ -1,0 +1,41 @@
+ACTIVITY 1:
+----------
+import java.util.Scanner;
+
+class U1_L1_Activity_One {
+  public static void main(String[] args) {
+    
+    /* Write your code here */
+      System.out.print(" LeBron James ");
+  }
+}
+
+
+ACTIVITY 2:
+----------
+import java.util.Scanner;
+
+class U1_L1_Activity_Two {
+  public static void main(String[] args) {
+    
+    /* Write your code here */
+    System.out.println(" Alicia Keys ");
+    System.out.println(" Alicia Keys ");
+    System.out.println(" Alicia Keys ");
+  }
+}
+
+
+ACTIVITY 3:
+----------
+import java.util.Scanner;
+
+class U1_L1_Activity_Three {
+  public static void main(String[] args) {
+    
+    /* Write your code here */
+    System.out.println("********");
+    System.out.println("* java *");
+    System.out.println("********");
+  }
+}
