@@ -1,0 +1,82 @@
+/* Lesson 4 Coding Activity Question 1 */
+
+import java.util.Scanner;
+
+public class U3_L4_Activity_One{
+  public static void main(String[] args){
+    
+    Scanner scan = new Scanner(System.in);
+    System.out.println ("Enter a number:");
+    int x = scan.nextInt();
+    if(! ( x >= 5 && x <= 76)){
+      System.out.println("True");
+    }
+    else{
+      System.out.println("False");
+    }
+  }
+}
+
+
+/* Lesson 4 Coding Activity Question 2 */
+
+import java.util.Scanner;
+
+public class U3_L4_Activity_Two{
+  public static void main(String[] args){
+    
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter two integers: ");
+    int a = s.nextInt();
+    int b = s.nextInt();
+    if (a >= 0 && b >= 0) {
+      System.out.println("Both are positive or zero.");
+    } else {
+      System.out.println("One or both are negative.");
+    }
+    
+  }
+}
+
+
+/* Lesson 4 Coding Activity Question 3 */
+
+import java.util.Scanner;
+
+public class U3_L4_Activity_Three{
+  public static void main(String[] args){
+    
+    Scanner s = new Scanner(System.in);
+    System.out.println("Please enter the first octet:");
+    int input1 = s.nextInt();
+    System.out.println("Please enter the second octet:");
+    int input2 = s.nextInt();
+    System.out.println("Please enter the third octet:");
+    int input3 = s.nextInt();
+    System.out.println("Please enter the fourth octet:");
+    int input4 = s.nextInt();
+    boolean valid = true;
+    if (input1 < 0 || input1 > 255) {
+      System.out.println("Octet 1 is incorrect");
+      valid = false;
+    }
+    if (input2 < 0 || input2 > 255) {
+      System.out.println("Octet 2 is incorrect");
+      valid = false;
+    }
+    if (input3 < 0 || input3 > 255) {
+      System.out.println("Octet 3 is incorrect");
+      valid = false;
+    }
+    if (input4 < 0 || input4 > 255) {
+      System.out.println("Octet 4 is incorrect");
+      valid = false;
+    }
+    if (valid) {
+      System.out.println("IP Address: "
+          + input1 + "." + input2 + "." + input3 + "." + input4);
+    }
+    
+  }
+}
+
