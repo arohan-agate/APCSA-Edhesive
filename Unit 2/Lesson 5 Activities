@@ -1,0 +1,61 @@
+/* Lesson 5 Coding Activity Question  */
+
+import java.util.Scanner;
+import edhesive.shapes. * ;
+public class U2_L5_Activity_One {
+  public static void main(String[] args) {
+    RegularPolygon hende = new RegularPolygon(11);
+    RegularPolygon tetra = new RegularPolygon(14);
+    RegularPolygon ennea = new RegularPolygon(19);
+    System.out.println(hende + "\n" + tetra + "\n" + ennea);
+  }
+}
+
+
+/* Lesson 5 Coding Activity Question 2 */
+
+import java.io.*;
+import java.util.Scanner;
+import edhesive.shapes.*;
+
+public class U2_L5_Activity_Two{
+  public static void main(String[] args){
+  
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Type a radius:\n");  
+    Double rad = sc.nextDouble();
+    System.out.print("Type a length:\n");  
+    Double len = sc.nextDouble();
+    System.out.print("Type a width:\n");  
+    Double wid = sc.nextDouble();
+    
+    Circle poly = new Circle(rad);
+    Rectangle poly2 = new Rectangle(len, wid);
+    System.out.println(poly);
+    System.out.println(poly2);
+  
+  }
+}
+
+
+/* Lesson 5 Coding Activity Question 3 */
+
+import java.io.*;
+import java.util.Scanner;
+import edhesive.shapes.*;
+
+public class U2_L5_Activity_Three{
+  public static void main(String[] args){
+  
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Type the number of sides:\n");  
+    int sidenum = sc.nextInt();
+    System.out.print("Type a side length:\n");  
+    Double len = sc.nextDouble();
+    RegularPolygon poly2 = new RegularPolygon(sidenum, len);
+    System.out.println(poly2);
+    
+  
+  }
+}
+
