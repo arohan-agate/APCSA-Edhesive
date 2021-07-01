@@ -1,0 +1,67 @@
+/* Lesson 7 Coding Activity Question 1 */
+
+import java.util.Scanner;
+
+public class U3_L7_Activity_One{
+  public static void main(String[] args){
+    System.out.println("Enter password:");
+    Scanner scan = new Scanner(System.in);
+    String y = scan.nextLine();
+    String x = "swordfish";
+    if (x.equals(y)){
+      System.out.println("Access granted!");
+    }else{
+      System.out.println("Access denied!");
+    }
+  }
+}
+
+
+/* Lesson 7 Coding Activity Question 2 */
+
+import java.util.Scanner;
+
+public class U3_L7_Activity_Two{
+  public static void main(String[] args){
+    
+    Scanner in = new Scanner(System.in); 
+    System.out.println("Enter 2 strings:"); 
+    String string1 = in.nextLine(); 
+    String string2 = in.nextLine(); 
+    String substr1 = "";
+    String substr2 = "";
+    substr1 = string1.substring(0, 2);
+    substr2 = string2.substring(0, 2);
+
+    if (string1.equals(string2) == true) { 
+      System.out.println("Great!");
+      return;
+    }
+    if (substr1.equals(substr2) == true && string1.length() == 4) { 
+      System.out.println("Close enough");
+      return;
+    }
+    if (string1.equals(string2) == false) { 
+      System.out.println("Try again");
+      return;
+    } 
+  }
+}
+
+
+/* Lesson 7 Coding Activity Question 3 */
+
+import java.util.Scanner;
+import edhesive.shapes.*;
+
+public class U3_L7_Activity_Three{
+  public static void main(String[] args){
+
+    int a = 7;
+    while (a < 15) 
+    {
+      a += a % 4;
+      System.out.print(a + "   ");
+    }
+  }
+}
