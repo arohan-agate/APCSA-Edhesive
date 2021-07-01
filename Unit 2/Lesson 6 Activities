@@ -1,0 +1,45 @@
+**/* Lesson 6 Coding Activity Question 1 */**
+
+import java.util.Scanner;
+import edhesive.shapes.*;
+
+public class U2_L6_Activity_One{
+  public static void main(String[] args){
+  
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter number of sides:\n");  
+    int sidenum = sc.nextInt();
+    System.out.print("Type a side length:\n");  
+    Double len = sc.nextDouble();
+    RegularPolygon poly2 = new RegularPolygon(sidenum, len);
+    System.out.print("A " + poly2);
+    System.out.print(" has perimeter " + poly2.getPerimeter());
+    System.out.print(" and area " + poly2.getArea());
+    
+  
+  }
+}
+
+
+/* Lesson 6 Coding Activity Question 2 */
+
+import java.util.Scanner;
+import edhesive.shapes.*;
+
+public class U2_L6_Activity_Two{
+  public static void main(String[] args){
+  
+    Scanner sc= new Scanner(System.in);
+    System.out.print("Enter radius:\n");  
+    
+    Double rad = sc.nextDouble();
+    Circle poly = new Circle(rad);
+    System.out.println("Area: " + poly.getArea());
+    System.out.println("Radius is being doubled...");
+    poly.getRadius();
+    poly.setRadius(rad*2);
+    System.out.println("Area: " + poly.getArea());
+  }
+}
+
+
