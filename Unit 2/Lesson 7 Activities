@@ -1,0 +1,65 @@
+/* Lesson 7 Coding Activity Question 1 */
+
+import java.util.Scanner;
+
+public class U2_L7_Activity_One{
+  public static void main(String[] args){
+  
+    int a = Integer.MAX_VALUE;
+    a++;
+    System.out.println(a);
+    int b = Integer.MIN_VALUE;
+    b--;
+    System.out.println(b);
+  
+  }
+}
+
+
+/* Lesson 7 Coding Activity Question 2 */
+
+import java.util.Scanner;
+import java.lang.Integer;
+
+public class U2_L7_Activity_Two{
+  public static void main(String[] args){
+  
+    Scanner scan = new Scanner(System.in);
+    Integer a = null;
+    Integer b = null;
+    System.out.println(a + " " + b);
+    System.out.println("Enter values:");
+    a = scan.nextInt();
+    b = scan.nextInt();
+    Double avg = new Double(a+b)/2;
+    System.out.println("Average of " + a + " and " + b + " is " + avg);
+  
+  }
+}
+
+
+/* Lesson 7 Coding Activity Question 3 */
+
+import java.util.Scanner;
+import edhesive.shapes.*;
+
+public class U2_L7_Activity_Three{
+  public static void main(String[] args){
+
+    Scanner scan = new Scanner(System.in);
+    Double radius;
+    Double length;
+    
+    System.out.println("Enter radius:");
+    radius = scan.nextDouble();
+    System.out.println("Enter length:");
+    length = scan.nextDouble();
+    System.out.println("Enter sides:");
+    Integer sides = scan.nextInt();
+    Circle c = new Circle(radius);
+    RegularPolygon p = new RegularPolygon(sides, length);
+    System.out.println(c);
+    System.out.println(p);
+
+  }
+}
