@@ -1,0 +1,44 @@
+ACTIVITY 1:
+----------
+import java.util.Scanner;
+
+public class U2_L2_Activity_One{
+  public static void main(String[] args){
+  
+    Scanner sc= new Scanner(System.in);
+    System.out.print("What type of item are you buying?\n");  
+    String name= sc.nextLine();
+    System.out.print("How many are you buying?\n");  
+    int amount = sc.nextInt();
+    System.out.print("How much does each one cost?\n");  
+    Double per_item = sc.nextDouble();
+    double final_price = amount*per_item;
+    System.out.print(amount + " " + name + " at $"+ per_item + " each will cost you $" + final_price);
+  }
+}
+
+
+ACTIVITY 2:
+----------
+import java.util.Scanner;
+
+public class U2_L2_Activity_Two{
+  public static void main(String[] args){
+  
+    System.out.print("\"I do not fear computers. I fear the lack of them.\"\nIsaac Asimov");  
+  
+  }
+}
+
+
+ACTIVITY 3:
+----------
+import java.util.Scanner;
+
+public class U2_L2_Activity_Three{
+  public static void main(String[] args){
+  
+    System.out.print("   _\n /   \\\n|     |\n \\ _ /");
+  
+  }
+}
