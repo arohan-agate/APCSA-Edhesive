@@ -1,0 +1,79 @@
+ACTIVITY 1:
+----------
+import java.util.Scanner;
+
+class U1_L4_Activity_One{
+  public static void main(String[] args){
+      
+      int num;
+      Scanner startNum = new Scanner(System.in);
+      
+     
+      System.out.println("Enter starting number(must be an integer)");
+      num = startNum.nextInt();
+      
+
+      System.out.println("number is now " + ++num);
+      System.out.println("number is now " + ++num);
+      System.out.println("number is now " + ++num);
+      System.out.println("number is now " + --num);
+      System.out.println("number is now " + --num);
+      System.out.println("number is now " + --num);
+  }
+}
+
+
+ACTIVITY 2:
+----------
+import java.util.Scanner;
+
+class U1_L4_Activity_Two{
+  public static void main(String[] args){
+      
+      int num;
+      Scanner startNum = new Scanner(System.in);
+      num = startNum.nextInt();
+      num = num/12;
+      System.out.println(num);
+  }
+}
+
+
+ACTIVITY 3:
+----------
+import java.util.Scanner;
+
+class U1_L4_Activity_Three {
+  public static void main(String[] args) {
+    
+    int num;
+      Scanner startNum = new Scanner(System.in);
+      System.out.println("Enter a radius:");
+      num = startNum.nextInt();
+      final double pi = 3.14;
+      double circ = 2*pi*num;
+      System.out.println("Circumference: " +circ);
+      double area = pi*num*num;
+      System.out.println("Area: " +area);
+    
+  }
+}
+
+
+ACTIVITY 4:
+----------
+import java.util.Scanner;
+
+class U1_L4_Activity_Four {
+  public static void main(String[] args) {
+    
+    double num;
+    double change;  
+    Scanner startNum = new Scanner(System.in);
+    System.out.println("Enter a price:");
+    num = startNum.nextDouble();
+    change = 20-num;
+    System.out.println("Change from $20: $"+change);
+    
+  }
+}
