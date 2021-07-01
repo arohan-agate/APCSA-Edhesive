@@ -1,0 +1,72 @@
+/* Assignment 2 - Control Tower */
+/* Class name - must be "Assignment2" in order to run */
+import java.util.Scanner;
+import edhesive.assignment2.Airplane;
+import java.lang.Math;
+
+public class Assignment2 {
+
+  public static void main(String[] args) {
+    Airplane ap1 = new Airplane();
+  
+    //System.out.println();
+    Scanner scan = new Scanner(System.in);
+    String cs;
+    double dist;
+    int dir;
+    int alt;
+    
+    //user input
+    System.out.println("Enter the details of the second airplane (call-sign, distance, bearing and altitude):");
+    cs = scan.nextLine();
+    dist = scan.nextDouble();
+    dir=  scan.nextInt();
+    alt = scan.nextInt();
+  
+    String callSign = cs.toUpperCase();
+    
+    System.out.println();
+    
+    //creating Airplane 2
+    Airplane ap2 = new Airplane(callSign, dist, dir, alt);
+    
+    //printing Airplane 1 and 2
+    System.out.println("Initial Positions:");
+    System.out.println("\"Airplane 1\": " + ap1.toString());
+    System.out.println("\"Airplane 2\": " + ap2.toString());
+    
+    //getting difference in distance and height
+    double diffDist = ap1.distTo(ap2);
+    System.out.println("The distance between the planes is "  + diffDist + " miles.");
+    int diffAlt = (ap2.getAlt()-ap1.getAlt());
+    System.out.println("The difference in height between the planes is " + Math.abs(diffAlt) + " feet.");
+    
+  
+    //Altitude change:
+    ap1.gainAlt();
+    ap1.gainAlt();
+    ap1.gainAlt();
+    ap1.gainAlt();
+    
+    ap2.loseAlt();
+    ap2.loseAlt();
+    
+    //Move airplanes:
+    ap1.move(10.5, 50);
+    ap2.move(8.0, 125);
+    
+    //Print new into:
+    System.out.println();
+    System.out.println("New Positions:");
+    System.out.println("\"Airplane 1\": " + ap1.toString());
+    System.out.println("\"Airplane 2\": " + ap2.toString());
+    
+    //getting difference in distance and heights
+    double diffDist2 = ap1.distTo(ap2);
+    System.out.println("The distance between the planes is "  + diffDist2 + " miles.");
+    int diffAlt2 = (ap2.getAlt()-ap1.getAlt());
+    System.out.println("The difference in height between the planes is " + Math.abs(diffAlt2) + " feet.");
+    
+  }
+
+}
