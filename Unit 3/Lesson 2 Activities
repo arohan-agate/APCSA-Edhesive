@@ -1,0 +1,96 @@
+/* Lesson 2 Coding Activity Question 1 */
+
+import java.util.Scanner;
+
+public class U3_L2_Activity_One{
+  public static void main(String[] args){
+    
+    Scanner scan = new Scanner(System.in);
+    
+    Double x = scan.nextDouble();
+    Double y = scan.nextDouble();
+    Double z = scan.nextDouble();
+    Double z2 = scan.nextDouble();
+    double avg = 1.0 * (x + y + z + z2)/4;
+    if ( avg >= 89.5){
+      System.out.println ("ABOVE AVERAGE");
+    }
+  }
+}
+
+
+/* Lesson 2 Coding Activity Question 2 */
+
+import java.util.Scanner;
+
+public class U3_L2_Activity_Two{
+  public static void main(String[] args){
+    
+    Scanner scan = new Scanner(System.in);
+    System.out.println ("Please enter two numbers:");
+    Double x = scan.nextDouble();
+    Double y = scan.nextDouble();
+    if (x >= y){
+      double fin = x;
+      System.out.println ("Largerst is: " + fin);
+    }
+    else{
+      double fin = y;
+      System.out.println ("Largerst is: " + fin);
+    }
+  }
+}
+
+
+/* Lesson 2 Coding Activity Question 3 */
+
+import java.util.Scanner;
+
+public class U3_L2_Activity_Three{
+  public static void main(String[] args){
+    
+    int a = 10;
+    
+    if (a > 7)
+    {
+      System.out.print("one");
+    }
+    else if (a % 5 == 0)
+    {
+      System.out.print("two");
+    }
+    else
+    {
+      System.out.print("three");
+    }
+    if (a * 2 >= 18)
+    {
+      System.out.print("four");
+    }
+  }
+}
+
+
+/* Lesson 2 Coding Activity Question 4 */
+
+import java.util.Scanner;
+
+public class U3_L2_Activity_Four{
+  public static void main(String[] args){
+    
+    Scanner scan = new Scanner(System.in);
+    System.out.println ("What is the temperature?");
+    Double x = scan.nextDouble();
+    if (x > 102){
+      System.out.println ("WARNING");
+    }
+    if (x < 99){
+      System.out.println ("WARNING");
+    }
+    else{
+      return;
+    }
+    
+  }
+}
+
