@@ -1,0 +1,51 @@
+ACTIVITY 1:
+----------
+import java.util.Scanner;
+
+class U1_L6_Activity_One {
+  public static void main(String[] args) {
+    
+    int num;
+    int num2;
+    Scanner startNum = new Scanner(System.in);
+    System.out.println("Please enter two integers:");
+    num = startNum.nextInt();
+    num2 = startNum.nextInt();
+    
+    double x = 1.0*(num + num2) / 2;
+    System.out.println("The average is: "+ x);
+    
+  }
+}
+
+
+ACTIVITY 2:
+----------
+import java.util.Scanner;
+
+class U1_L6_Activity_Two {
+  public static void main(String[] args) {
+    
+    Scanner sc = new Scanner(System.in);
+    double num1;
+    long num2;
+    System.out.print("Please input a decimal number: ");
+    num1 = sc.nextDouble();
+    num2 = Math.round(num1);
+    System.out.println("Answer: " + num2);  
+    
+  }
+}
+
+
+ACTIVITY 3:
+----------
+import java.util.Scanner;
+class U1_L6_Activity_Three {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System. in );
+    System.out.println("Please input a decimal number:");
+    double x = scan.nextDouble();
+    System.out.println("Answer: " + ((int)((x - (int) x) * 10)) + " " + ((int)(((x * 10) - ((int)(x * 10))) * 10)));
+  }
+}
