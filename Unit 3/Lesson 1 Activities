@@ -1,0 +1,81 @@
+/* Lesson 1 Coding Activity Question 1 */
+
+import java.util.Scanner;
+
+public class U3_L1_Activity_One{
+  public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Please enter an integer::");
+    Integer r = scan.nextInt();
+    if (r == 176)
+    {
+      System.out.println("YES");
+    }
+  }
+}
+
+
+/* Lesson 1 Coding Activity Question 2 */
+
+import java.util.Scanner;
+
+public class U3_L1_Activity_Two{
+  public static void main(String[] args){
+    
+    double x;
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Please enter a double:");
+    x = scan.nextDouble();
+    if (x == 48.729)
+    {
+      System.out.println("YES");
+    }
+    
+  }
+}
+
+
+/* Lesson 1 Coding Activity Question 3 */
+
+import java.util.Scanner;
+
+public class U3_L1_Activity_Three{
+  public static void main(String[] args){
+    
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Please enter two integers:");
+    Integer x = scan.nextInt();
+    Integer y = scan.nextInt();
+    if (x == y)
+    {
+      System.out.println("YES");
+    }
+    
+  }
+}
+
+
+/* Lesson 1 Coding Activity Question 4 */
+
+import java.util.Scanner;
+
+public class U3_L1_Activity_Four{
+  public static void main(String[] args){
+    
+    int n;
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter a Number:");
+    n = s.nextInt();
+    if(n % 2 == 0)
+    {
+      System.out.println("Even");
+      
+    }
+    else
+    {
+      System.out.println("Odd");
+      
+    }
+  }
+}
+
