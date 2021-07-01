@@ -1,0 +1,49 @@
+ACTIVITY 1:
+----------
+import java.util.Scanner;
+
+class U1_L3_Activity_One {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner (System.in);
+    System.out.println("Please enter a decimal number");
+    double n1 = scan.nextDouble();
+    System.out.println("Please enter a second decimal number");
+    double n2 = scan.nextDouble();
+    System.out.println(n2+" "+n1);
+  }
+}
+
+
+ACTIVITY 2:
+----------
+import java.util.Scanner;
+
+class U1_L3_Activity_Two {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner (System.in);
+    System.out.println("Hi there. What is your name?");
+    String name = scan.nextLine();
+    System.out.println("Hi " + name +". How old are you?");
+    int age = scan.nextInt();
+    System.out.println(name + " is " +age+" years old.");
+  }
+}
+
+
+ACTIVITY 3:
+----------
+import java.util.Scanner;
+public class U1_L3_Activity_Three {
+  public static void main(String[] args) {
+    Scanner x = new Scanner(System. in );
+    System.out.println("Java is a programming language, true or false?");
+    boolean y = x.nextBoolean();
+    System.out.println("Only numbers can be stored by variables in Java, true or false?");
+    boolean z = x.nextBoolean();
+    System.out.println("There are only 2 possible values which can be held by a boolean variable, true or false?");
+    boolean a = x.nextBoolean();
+    System.out.println("Question 1 - Your answer: " + y + ". Correct answer: true");
+    System.out.println("Question 2 - Your answer: " + z + ". Correct answer: false");
+    System.out.println("Question 3 - Your answer: " + a + ". Correct answer: true");
+  }
+}
