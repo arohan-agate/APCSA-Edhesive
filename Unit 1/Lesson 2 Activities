@@ -1,0 +1,44 @@
+ACTIVITY 1:
+----------
+import java.util.Scanner;
+
+class U1_L2_Activity_One {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Hello, What is your name?");  
+    String str= scan.nextLine();           
+    System.out.print("Hi " + str + ", nice to see you.");             
+  }
+}
+
+
+ACTIVITY 2:
+----------
+import java.util.Scanner;
+
+class U1_L2_Activity_One {
+  public static void main(String[] args) {
+    Scanner scan= new Scanner(System.in);
+    System.out.println("Please enter three names:");  
+    String str1 = scan.nextLine();
+    String str2 = scan.nextLine();           
+    String str3 = scan.nextLine();           
+    System.out.print(str3 + " "+ str2 + " " + str1);             
+  }
+}
+
+
+ACTIVITY 3:
+----------
+import java.util.Scanner;
+
+class U1_L2_Activity_One {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Hi there. What is your name?");  
+    String str1 = scan.nextLine();
+    System.out.println("What adjective describes you?");  
+    String str2=  scan.nextLine();   
+    System.out.print("My name is " + str1 +"." + " I am " +str2+".");             
+  }
+}
