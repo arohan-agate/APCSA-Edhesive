@@ -1,0 +1,212 @@
+NumStatsArray.java
+import java.util.Arrays;
+
+public class NumStatsArray{
+
+  //Add a final private variable to hold double array
+  private final double[] holder;
+
+  public NumStatsArray(double[] a){
+    //Write constructor code
+    holder = a;
+  }
+
+  //Implement all methods as described
+  public String toString(){
+    String x = "";
+    x += "{";
+    for (int i = 0; i < holder.length; i++) {
+      x += holder[i];
+      if (i == holder.length-1) {
+        x += "}";
+        break;
+      }
+      x += ", ";
+    }
+    return x;
+  }
+
+  public double average(){
+    double indicesAmt = 0;
+    double elementAmt = 0;
+    
+  for(int i = 0; i < holder.length; i++) {
+    elementAmt += holder[i];
+    indicesAmt++;
+  }
+    return elementAmt / indicesAmt;
+}
+
+  public double range(){
+  double maxValue = holder[0]; 
+    for(int i = 1; i < holder.length; i++) {  
+      if(holder[i] > maxValue){ 
+         maxValue = holder[i]; 
+      } 
+    } 
+ 
+  double minValue = holder[0]; 
+    for(int i = 1; i < holder.length; i++) { 
+      if(holder[i] < minValue){ 
+        minValue = holder[i]; 
+      } 
+    } 
+    return maxValue - minValue;
+  }
+
+  public int sortStatus() {
+    boolean ascending = true;
+    boolean descending = true;
+    
+    for (int i = 0; i < holder.length - 1; i++) {
+    if (holder[i] > holder[i + 1]) {
+        ascending = false;
+        break;
+    }
+  }
+        
+    for (int i = 0; i < holder.length - 1; i++) {
+    if (holder[i] < holder[i + 1]) {
+        descending = false;
+        break;
+    }
+  }
+    
+    if(ascending == true)
+    return 1;
+    
+    else if(descending == true)
+    return -1;
+    
+    else
+    return 0;
+  } 
+}
+StringStatsArray.java
+
+import java.util.Arrays;
+
+public class StringStatsArray{
+
+  //Add a final private variable to hold String array
+  private final String[] holder;
+
+  public StringStatsArray(String[] a){
+    //Write constructor code
+    holder = a;
+  }
+
+  //Implement all methods as described
+  public String toString(){
+    String str0 = "" + Arrays.toString(holder);
+    str0 = str0.replace("[", "{\"");
+    str0 = str0.replace("]", "\"}");
+    str0 = str0.replaceAll(", ", "\", \"");
+    return str0;
+  }
+
+  public double averageLength(){
+   int indicesAmt = 0;
+   int elementAmt = 0;
+    
+  for(int i = 0; i < holder.length; i++) {
+    elementAmt += holder[i].length();
+    indicesAmt++;
+  }
+    return (double) elementAmt / indicesAmt;
+}
+
+  public int search(String target){
+    for (int i = 0; i < holder.length; i++) {
+    if(holder[i].equals(target)){
+        return i;
+    }
+}
+  return -1;
+}
+
+  public int sortStatus() {
+    boolean ascending = true;
+    boolean descending = true;
+    
+    for (int i = 1; i < holder.length; i++) {
+    if (holder[i].compareTo(holder[i - 1]) < 0) {
+         ascending = false;
+         break;
+    }
+}
+        
+    for (int i = 1; i < holder.length; i++) {
+    if (holder[i].compareTo(holder[i - 1]) > 0) {
+        descending = false;
+        break;
+    }
+  }
+    
+    if(ascending == true)
+    return 1;
+    
+    else if(descending == true)
+    return -1;
+    
+    else
+    return 0;
+  } 
+}
+runner_StatsArray.java
+import java.util.Scanner;
+}
+
+public class runner_StatsArray{
+
+  public static Scanner scan = new Scanner(System.in);
+
+  public static void main(String[] args){
+    int ans = 0;
+    while(ans != 3){
+      System.out.println("Test which class?\n1 - NumStatsArray\n2 - StringStatsArray \n3 - quit");
+      ans = scan.nextInt();
+      if(ans == 1)
+        testNums();
+      else if(ans == 2)
+        testStrings();
+      else if(ans != 3)
+        System.out.println("Not a valid choice");
+      System.out.println();
+    }
+  }
+
+  public static void testNums(){
+    System.out.println("Enter array length:");
+    int len = scan.nextInt();
+    double[] vals = new double[len];
+    System.out.println("Enter values:");
+    for(int i = 0; i < len; i++){
+      vals[i] = scan.nextDouble();
+    }
+    NumStatsArray nSA = new NumStatsArray(vals);
+    System.out.println("\nMethod returns:");
+    System.out.println("toString: " + nSA);
+    System.out.println("average: " + nSA.average());
+    System.out.println("range: " + nSA.range());
+    System.out.println("sortStatus: " + nSA.sortStatus());
+  }
+
+  public static void testStrings(){
+    System.out.println("Enter array length:");
+    int len = scan.nextInt();
+    String[] vals = new String[len];
+    scan.nextLine();
+    System.out.println("Enter values:");
+    for(int i = 0; i < len; i++){
+      vals[i] = scan.nextLine();
+    }
+    System.out.println("Enter String to search for:");
+    String searchVal = scan.nextLine();
+    StringStatsArray sSA = new StringStatsArray(vals);
+    System.out.println("\nMethod returns:");
+    System.out.println("toString: " + sSA);
+    System.out.println("averageLength: " + sSA.averageLength());
+    System.out.println("search: " + sSA.search(searchVal));
+    System.out.println("sortStatus: " + sSA.sortStatus());
+  }
