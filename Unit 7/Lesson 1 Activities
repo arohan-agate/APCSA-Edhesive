@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+public class U7_L1_Activity_One {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        ArrayList < String > words = new ArrayList < String > ();
+        String entered;
+        System.out.println("Please enter words, enter STOP to stop the loop.");
+        do {
+            entered = scan.next();
+            if (entered.equals("STOP")) {
+                break;
+            }
+            words.add(entered);
+        } while (true);
+        System.out.printf("\n%d\n%s\n", words.size(), words);
+        if (words.size() > 2) {
+            words.remove(0);
+            words.remove(words.size() - 1);
+        }
+        System.out.print(words);
+    }
+}
