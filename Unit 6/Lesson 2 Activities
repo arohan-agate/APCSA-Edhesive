@@ -1,0 +1,82 @@
+public class U6_L2_Activity_One {
+    public static boolean allNegative(double[] x) {
+        for (double y: x) {
+            if (y >= 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+import java.util.Scanner;
+public class runner_U6_L2_Activity_One{
+  public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter array length:");
+    int len = scan.nextInt();
+    double[] vals = new double[len];
+    System.out.println("Enter values:");
+    for(int i = 0; i < len; i++){
+      vals[i] = scan.nextDouble();
+    }
+    System.out.println("All negative: " + U6_L2_Activity_One.allNegative(vals));
+  }
+}
+
+--------------------------------------------------------------------
+public class U6_L2_Activity_Two {
+    public static int numEven(int[] x) {
+        int z = 0;
+        for (int y: x) {
+            if (y % 2 == 0) {
+                z++;
+            }
+        }
+        return z;
+    }
+}
+
+import java.util.Scanner;
+public class runner_U6_L2_Activity_Two{
+  public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter array length:");
+    int len = scan.nextInt();
+    int[] vals = new int[len];
+    System.out.println("Enter values:");
+    for(int i = 0; i < len; i++){
+      vals[i] = scan.nextInt();
+    }
+    System.out.println("Number even: " + U6_L2_Activity_Two.numEven(vals));
+  }
+}
+
+--------------------------------------------------------------------
+public class U6_L2_Activity_Three {
+    public static boolean hasDuplicates(int[] x) {
+        for (int i = 0; i < x.length; i++) {
+            for (int j = i + 1; j < x.length; j++) {
+                if (x[i] == x[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+}
+
+import java.util.Scanner;
+public class runner_U6_L2_Activity_Three{
+  public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter array length:");
+    int len = scan.nextInt();
+    int[] vals = new int[len];
+    System.out.println("Enter values:");
+    for(int i = 0; i < len; i++){
+      vals[i] = scan.nextInt();
+    }
+    System.out.println("Has duplicates: " + U6_L2_Activity_Three.hasDuplicates(vals));
+  }
+}
