@@ -1,0 +1,43 @@
+public class U7_L6_Activity_One {
+  public static void sortAndPrint(String[] arr) {
+    for (int i = 1; i < arr.length; i++) {
+      int x = i;
+      for (int j = i - 1; j >= 0; j--) {
+        if (arr[j].compareTo(arr[x]) > 0) {
+          String tmp = arr[j];
+          arr[j] = arr[x];
+          arr[x] = tmp;
+          x--;
+        }
+      }
+      for (String word: arr) {
+        System.out.print(word + " ");
+      }
+      System.out.println();
+    }
+  }
+}
+
+
+import java.util.ArrayList;
+import java.util.Collections;
+public class U7_L6_Activity_Two {
+  public static int insertSort(ArrayList < Integer > list) {
+    int count = 0,
+    x = 0;
+    for (int i = 1; i < list.size(); i++) {
+      x = i;
+      for (int j = i - 1; j >= 0; j--) {
+        if (list.get(x) < list.get(j)) {
+          Collections.swap(list, j, x);
+          count++;
+          x--;
+        } else {
+          count++;
+          break;
+        }
+      }
+    }
+    return count;
+  }
+}
