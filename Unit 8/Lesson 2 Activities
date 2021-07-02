@@ -1,0 +1,58 @@
+public class TemperatureMonth {
+
+  private double[][] temperatures;
+
+  public TemperatureMonth(double[][] t){
+    temperatures = t;
+  }
+
+  public double getMaxTemp(){
+    
+    double maxValue = temperatures[0][0];
+    for (int j = 0; j < temperatures.length; j++) {
+      for (int i = 0; i < temperatures[j].length; i++)  {
+        if (temperatures[j][i] > maxValue) {
+           maxValue = temperatures[j][i];
+        }
+    }
+  }
+   return maxValue;
+  }
+  
+
+  public double getMinTemp(){
+   double minValue = temperatures[0][0];
+   for(int i = 0; i < temperatures.length; i++){
+     for(int k = 0; k < temperatures[i].length; k++){
+       if(temperatures[i][k] < minValue){
+         minValue = temperatures[i][k];
+       }
+     }
+   }
+   return minValue; 
+  }
+
+  public double getMonthlyAverage(){
+    double sum = 0.0;
+    double c = 0.0;
+   for(int i = 0; i < temperatures.length; i++){
+     for(int k = 0; k < temperatures[i].length; k++){
+       sum += temperatures[i][k];
+       c++;
+     }
+   }
+   return sum / c; 
+  }
+
+  public double[] getWeeklyAverages(){
+    double [] average = new double[temperatures.length];
+    for (int i = 0; i < temperatures.length; i++) {
+        double rowTotal = 0;
+        for (int k = 0; k < temperatures[0].length; k++) {
+            rowTotal += temperatures[i][k];
+        }
+           average[i] = rowTotal/temperatures[0].length;
+    }
+    return average;
+  }
+}
