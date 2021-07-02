@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+public class U7_L3_Activity_One {
+  public static void shiftRight(ArrayList < String > objects) {
+    String last = objects.get(objects.size() - 1);
+    for (int i = objects.size() - 1; i > 0; i--) {
+      objects.set(i, objects.get(i - 1));
+    }
+    objects.set(0, last);
+  }
+}
+
+
+import java.util.ArrayList;
+public class U7_L3_Activity_Two {
+  public static void printStatistics(ArrayList < Integer > nums) {
+    int sum = 0;
+    ArrayList < Integer > occurences = new ArrayList < Integer > ();
+    ArrayList < Integer > count = new ArrayList < Integer > ();
+    for (Integer num: nums) {
+      sum += num;
+    }
+    System.out.printf("Sum: %d\nAverage: %f\nMode: ", sum, ((double) sum / (double) nums.size()));
+    Integer[] num = new Integer[nums.size()];
+    num = nums.toArray(num);
+    for (int check: num) {
+      if (!count.contains(check)) {
+        count.add(check);
+        occurences.add(occurence(num, check));
+      }
+    }
+    int highest = 0;
+    for (Integer check: occurences) {
+      if (check > highest) {
+        highest = check;
+      }
+    }
+    Integer[] occ = new Integer[occurences.size()];
+    occ = occurences.toArray(occ);
+    if (occurence(occ, highest) >= 2) {
+      System.out.print("no single mode");
+    } else {
+      System.out.print(count.get(occurences.indexOf(highest)));
+    }
+  }
+  public static int occurence(Integer arr[], Integer x) {
+    int res = 0;
+    for (int i = 0; i < arr.length; i++) {
+      if (x.equals(arr[i])) {
+        res++;
+      }
+    }
+    return res;
+  }
+}
