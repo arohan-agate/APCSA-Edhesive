@@ -1,0 +1,115 @@
+public class Fraction
+{
+  // Variables
+  private int num;
+  private int den;
+  private static int count = 0;
+  
+  // Constructors
+  public Fraction()
+  {
+    num = 1;
+    den = 1;
+    count ++;
+  }
+  public Fraction (int n, int d)
+  {
+    if (n > 0)
+    {
+      num = n;
+    }
+    else
+    {
+      num = 1;
+    }
+    if (d > 0)
+    {
+      den = d;
+    }
+    else
+    {
+      den = 1;
+    }
+    count ++;
+  }
+  // Acessors
+  public int getNumerator()
+  {
+    return num;
+  }
+  public int getDenominator()
+  {
+    return den;
+  }
+  public static int getNumFractions()
+  {
+    return count;
+  }
+  public String mixedNumber()
+  {
+    if (num >= den)
+    {
+      int whole = num/den;
+      int rem = num % den;
+      return whole + " " + rem + "/" + den;
+    }
+    else
+    {
+      return num + "/" + den;
+    }
+  }
+  public String toString()
+  {
+    return num + "/" + den;
+  }
+
+  //Mutators
+  public void setNumerator(int n)
+  {
+    if (n > 0) //might need to change
+    {
+      num = n;
+    }
+  }
+  public void setDenominator(int d)
+  {
+    if (d > 0)
+    {
+      den = d;
+    }
+  }
+  public void add(int n, int d)
+  {
+    if (n > 0 && d > 0)
+    {
+      //might have this.
+      num = ((num * d) + (n * den));
+      den = (den * d);
+    }
+  }
+  public void add(Fraction f)
+  {
+    num = (num * f.getDenominator()) + (f.getNumerator() * den);
+    den = (den * f.getDenominator());
+  }
+  public void multiply(int n, int d)
+  {
+    if (n > 0 && d > 0)
+    {
+      num = n * num;
+      den = d * den;
+    }
+  }
+  public void multiply(Fraction f)
+  {
+    num = num * f.getNumerator();
+    den = den * f.getDenominator();
+  }
+  
+  
+  
+  
+  
+  
+  
+}
