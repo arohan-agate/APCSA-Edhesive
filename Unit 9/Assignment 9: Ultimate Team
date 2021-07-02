@@ -1,0 +1,160 @@
+public class Coach extends Person
+{
+  private String role;
+  
+  public Coach(String firstName, String lastName, String rol)
+  {
+    super(firstName, lastName);
+    role = rol;
+  }
+  
+  public String toString()
+  {
+    return super.toString() + "\n   " + "Role: "+ role; 
+  }
+}
+
+------------------------------------------------------------------------------------------------
+
+import java.util.ArrayList;
+
+public class UltimateTeam {
+
+    private ArrayList<UltimatePlayer> players;
+    private ArrayList<Coach> coaches;
+
+    public UltimateTeam(ArrayList<UltimatePlayer> players, ArrayList<Coach> coaches) {
+      this.players = players;
+      this.coaches = coaches;
+    }
+
+    public String getCutters() {
+        // Call helper method (see below)
+        return getPlayersByPosition("cutter");
+    }
+
+    public String getHandlers() {
+        // Call helper method (see below)
+        return getPlayersByPosition("handler");
+    }
+
+    public String toString() {
+        String s = "COACHES\n";
+        for (Coach coach : this.coaches) {
+            s += coach.toString() + "\n";
+        }
+        s += "\nPLAYERS\n";
+        for (UltimatePlayer player : this.players) {
+            s += player.toString() + "\n";
+        }
+        return s;
+    }
+
+    /* This helper method means that code does not need to be
+     * duplicated for the getCutters and getHandlers method. It
+     * iterates throught he player list and finds the position
+     * of each player. If that position is the same as s, it
+     * adds the players to the String.
+     */
+    private String getPlayersByPosition(String position) {
+        String s = "";
+        for (UltimatePlayer player : this.players) {
+            if (position.equals(player.getPosition())) {
+                s += player.toString() + "\n";
+            }
+        }
+        return s;
+    }
+}
+
+------------------------------------------------------------------------------------------------
+
+public class Person {
+    private String firstName;
+    private String lastName;
+
+    public Person(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public int throwDisc(int pow){
+      if(pow > 10)
+        pow = 10;
+      else if(pow < 1)
+        pow = 1;
+      return pow * 2;
+    }
+
+    public String toString() {
+        return lastName + ", " + firstName;
+    }
+
+}
+
+------------------------------------------------------------------------------------------------
+
+public class Captain extends UltimatePlayer {
+    private boolean type;
+
+    public Captain(String firstName, String lastName, String position, boolean type) {
+        super(firstName, lastName, position);
+        this.type = type;
+    }
+
+    public int throwDisc(int pow){
+      return 5 * super.throwDisc(pow)/4;
+    }
+
+    public String toString() {
+        return super.toString() + "\n   Captain: " + this.captainType();
+    }
+
+    private String captainType() {
+        if (type == true) {
+          return "offense";
+        } else {
+          return "defense";
+        }
+    }
+}
+
+------------------------------------------------------------------------------------------------
+
+public class UltimatePlayer extends Person {
+
+    private static int jerseyNumberCounter = 0;
+    private int jerseyNumber;
+    private String position;
+
+    public UltimatePlayer(String firstName, String lastName, String position) {
+        /* This code assigns a unique player number to every player created by
+         * updating the static variable jerseyNumberCounter in the constructor
+         * and setting the jersey number to its current value
+         */
+        super(firstName, lastName);
+        this.jerseyNumberCounter++;
+        this.jerseyNumber = jerseyNumberCounter;
+
+        // Sets position (defaults to handler if parameter is not valid)
+        if ("cutter".equals(position) || "handler".equals(position)) {
+            this.position = position;
+        } else {
+            this.position = "handler";
+        }
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public int throwDisc(int pow){
+      return 2 * super.throwDisc(pow);
+    }
+
+    public String toString() {
+        return super.toString()
+                + "\n   Jersey #: " + this.jerseyNumber
+                + "\n   Position: " + this.position;
+    }
+}
