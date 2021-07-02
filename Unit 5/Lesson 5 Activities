@@ -1,0 +1,136 @@
+public class Post {
+
+  private String a;
+  private String b;
+  private int c;
+
+public Post(String user, String contents, int favorites) {
+  a = user;
+  b = contents;
+  c = favorites; }
+ 
+ public String toString() {
+    return a + "\n" + b + "\n\tFavorited by " + c + " users";
+ }
+}
+import java.util.Scanner;
+
+public class runner_Post{
+  public static void main(String[] args){
+
+    Scanner scan = new Scanner(System.in);
+    System.out.println("Enter name:");
+    String n = scan.nextLine();
+    System.out.println("Enter post content:");
+    String m = scan.nextLine();
+    System.out.println("Enter number of favorites:");
+    int f = scan.nextInt();
+    Post p1 = new Post(n, m, f);
+    System.out.println("\n"+p1);
+  }
+}
+
+
+
+
+public class Elevator{
+  
+  private int maxFloor; // Represents max possible floor of elevator.
+  private int currentFloor; // Represents current floor of elevator.
+  private boolean inService; // // True if elevator in service, false if not.
+  
+  
+  // Creates an elevator which is in service. If max is greater than 1 sets 
+  // the maximum floor to max, otherwise sets the maximum floor to 2. If start 
+  // is between 1 and the maximum floor inclusive the elevator starts at this
+  // floor, otherwise it starts at 1.
+  public Elevator(int max, int start){
+    inService = true;
+    
+    if(max > 1)
+    maxFloor = max;
+    else
+    maxFloor = 2;
+    
+    if (start > 1 && start <= maxFloor)
+    currentFloor = start;
+    else
+    currentFloor = 1;
+  }
+  
+  // Returns the maximum floor of the elevator.
+  public int getMaxFloor(){
+    return maxFloor;
+  }
+  
+  // Returns the floor the elevator is currently on.
+  public int getCurrentFloor(){
+    return currentFloor;
+  }
+  
+  // Returns true if the elevator is in service, false if it is not.
+  public boolean isInService(){
+    if(inService == true)
+    return true;
+    else
+    return false;
+  }
+  
+  // If the elevator is in service, sets it to not be in service. If the
+  // elevator is not in service, sets it to be in service.
+  public void toggleInService(){
+    if(inService == true)
+    inService = false;
+    else
+    inService = true;
+  }
+  
+  // If the value of floor is between 1 and the maximum floor inclusive, and
+  // the elevator is in service, sets the current floor to floor. Otherwise
+  // does nothing.
+  public void goToFloor(int floor){
+    if((inService == true) && (floor >= 1 && floor <= maxFloor))
+    currentFloor = floor;
+    
+  }  
+}
+import java.util.Scanner;
+
+public class runner_Elevator{
+  public static void main(String[] args){
+    String instruction = "";
+    Scanner scan = new Scanner(System.in);
+    while(!instruction.equals("q")){
+      System.out.println("How many floors?");
+      int max = scan.nextInt();
+      System.out.println("Starting on which floor?");
+      int start = scan.nextInt();
+      scan.nextLine();
+      Elevator e = new Elevator(max, start);
+      instruction = "";
+
+      while(!(instruction.equals("q")|| instruction.equals("r"))){
+        System.out.println("Elevator is on floor " + e.getCurrentFloor() + " of " + e.getMaxFloor() + ".");
+        if(e.isInService())
+          System.out.println("Elevator in service.");
+        else
+          System.out.println("Elevator not in service.");
+        System.out.println("Type \"c\" to change floor, \"s\" to put elevator in or out of service, \"r\" to restart, \"q\" to quit.");
+        instruction = scan.nextLine();
+        instruction = instruction.toLowerCase();
+        if(instruction.equals("c")){
+          System.out.println("New floor number?");
+          int newFloor = scan.nextInt();
+          e.goToFloor(newFloor);
+          scan.nextLine();
+        }
+        else if(instruction.equals("s")){
+          e.toggleInService();
+        }
+        else if(!(instruction.equals("q")|| instruction.equals("r"))){
+          System.out.println("Instruction not recognized.");
+        }
+      }
+    }
+  }
+}
