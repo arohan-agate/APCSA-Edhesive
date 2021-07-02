@@ -1,0 +1,14 @@
+public class U10_L2_Activity_One
+{
+
+  public static String reverseString(String str)
+  {
+    String x = "";
+    if (str.length() > 0)
+    {
+    x = reverseString(str.substring(1)) + str.substring(0,1);
+    str= str.substring(1);
+  }
+  return x; 
+  }
+}
