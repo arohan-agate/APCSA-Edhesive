@@ -1,0 +1,65 @@
+import java.util.Scanner;
+public class runner_Student{
+  public static void main(String[] args){
+    Scanner scan = new Scanner(System.in);
+    boolean go = true;
+    while(go){
+      System.out.println("Input student first name or \"default\" for default values, \"q\" to quit:");
+      String fn = scan.nextLine();
+      if(fn.equals("default")){
+        Student s = new Student();
+        System.out.println("\n" + s + "\n");
+      }
+      else if(fn.equals("q")){
+        go = false;
+      }
+      else {
+        System.out.println("Input student last name:");
+        String ln = scan.nextLine();
+        System.out.println("Input year:");
+        int y = scan.nextInt();
+        System.out.println("Input GPA:");
+        double g = scan.nextDouble();
+        Student s = new Student(fn, ln, y, g);
+        System.out.println("\n" + s + "\n");
+        scan.nextLine();
+      }
+    }
+  }
+}
+
+public class Student 
+{
+  
+  private String firstName;
+  private String lastName;
+  private int    gradeLevel;  
+  private double gpa;
+  private static int num = 0;
+  private int studentID;
+  public Student() 
+  {
+    firstName = "None";
+    lastName = "None";
+    gpa = 0.0;
+    gradeLevel = 0;
+  }
+  
+  public Student(String fN, String lN, int gL, double GPA)
+  {
+    firstName = fN;
+    lastName = lN;
+    
+    if(gL >=0 && gL <= 12)
+    gradeLevel = gL;
+    if(GPA >= 0.0 && GPA <=4.5)
+    gpa = GPA;
+  }
+  
+  public String toString() {
+    num++;
+    studentID = num;
+    return lastName + ", " + firstName + "\nGPA: " + gpa + "\nGrade Level: " + gradeLevel + " id # " + studentID;
+    
+  }
+}
